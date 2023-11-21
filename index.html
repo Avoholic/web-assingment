@@ -38,11 +38,6 @@ function goSave(){
 		$("#counselContent").focus();
 		return false;
 	}
-	if(!($('#personal').is(":checked"))){
-		alert("개인정보수집 및 활용에 동의를 하셔야합니다.");
-		$("#personal").focus();
-		return;
-	}
 
 	var params = jQuery("#frm").serialize();
 	$('#frm').ajaxForm({
