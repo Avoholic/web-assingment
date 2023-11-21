@@ -1,0 +1,206 @@
+<html lang="ko">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./files/">
+    <link rel="stylesheet" href=".files/swiper.min.css">
+    <link rel="stylesheet" href="./files/">
+    <link rel="stylesheet" href="./files/sub.css">
+   <script type="text/javascript">
+
+function goSave(){
+
+     if("" == $("#counselName").val().split(" ").join("")){
+		alert("이름을 입력해주세요.");
+		$("#counselCompany2").focus();
+		return false;
+	}
+
+	if("" == $("#counselPhone").val().split(" ").join("")){
+		alert("연락처를 입력해주세요.");
+		$("#counselPhone").focus();
+		return false;
+	}
+    if("" == $("#counselMail").val().split(" ").join("")){
+		alert("이메일을 입력해주세요.");
+		$("#counselBranch").focus();
+		return false;
+	}
+	
+	if("" == $("#counselTitle").val().split(" ").join("")){
+		alert("제목을 입력해주세요.");
+		$("#counselTitle").focus();
+		return false;
+	}
+	if("" == $("#counselContent").val().split(" ").join("")){
+		alert("내용을 입력해주세요.");
+		$("#counselContent").focus();
+		return false;
+	}
+	if(!($('#personal').is(":checked"))){
+		alert("개인정보수집 및 활용에 동의를 하셔야합니다.");
+		$("#personal").focus();
+		return;
+	}
+
+	var params = jQuery("#frm").serialize();
+	$('#frm').ajaxForm({
+		url: 'proc.php',
+		enctype: "multipart/form-data",
+		success: function (p_data) {
+			if(p_data == "Y"){
+				alert("문의가 등록 되었습니다.\n감사합니다.");
+				//location.reload();
+				location.href='inquiry.php';
+			}else{
+				alert(p_data);
+				//$("#BUTTON_GROUP_AFTER").hide();
+				//$("#BUTTON_GROUP_BEFORE").show();
+			}
+		}
+	});
+	$("#frm").submit();
+}
+</script>
+    <title>사외결재요청</title>
+  </head>
+<body>
+    <script type="text/javascript">
+  		$(document).ready(function(){
+  		   $("#header").load("/html/headerB.html");
+  		   $(".loc01").load("/html/loc01.html");
+  		   $(".loc02").load("/html/loc02_04.html", function(){
+               $(".loc02 li:nth-child(3)").addClass('on');
+           });
+  		});
+    </script>
+    <div id="header" class="sub on"><div class="hd_in clear">
+
+</div>
+<div class="mo_menu">
+
+</div>
+<script type="text/javascript">
+        
+    </script>
+<script>
+  $(function(){
+      $('#header #gnb').hover(function(){
+          $('#header').addClass('on')
+      }, function(){
+          $('#header').removeClass('on')
+      })
+  })	
+
+
+</script>
+</div>
+    <div id="sub" class="inquiry">
+        <div class="sub_visual on">
+            <div class="vis_img">
+                <img src="./files/sub_visual05.jpg" alt="">
+            </div>
+            <div class="vis_txt">
+                <div class="inner2">
+                    <strong>사외결재요청</strong>
+                    <p>Assigning out of Workplace</p>
+                </div>
+            </div>
+            <div class="sub_loc">
+                <div class="wrap">
+                    <div class="inner2">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub_con">
+            <div class="con01">
+                <div class="inner2">
+                    <form name="frm" id="frm" method="POST">
+                        <div class="form_list">
+                            <ul>
+                                <li>
+                                    <strong>기안자</strong>
+                                    <input type="text" placeholder="이름을 입력해주세요." name="counselName" id="counselName">
+                                </li>
+                                <li>
+                                    <strong>결재요청서류</strong>
+                                    <select name="counselCheck" id="counselCheck">
+                                        <option value="">서류유형을 선택해주세요.</option>
+                                        <option value="제품 문의">정기-통관료 지출결의서</option>
+                                        <option value="설계 및 가공 문의">특송-관부가세 지출결의서</option>
+                                        <option value="채용 문의">영업비 지출결의서</option>
+                                        <option value="기타 문의">기타 서류</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <strong>1차 결재자</strong>
+                                    <input type="text" placeholder="이름를 입력해주세요." name="counselPhone" id="counselPhone">
+                                </li>
+                                <li>
+                                    <strong>2차 결재자</strong>
+                                    <input type="text" placeholder="이름을 입력해주세요." name="counselMail" id="counselMail">
+                                </li>
+                                <li>
+                                    <strong>제목</strong>
+                                    <input type="text" placeholder="제목을 입력해주세요. 예_36주차 상시3 DICHTO" name="counselTitle" id="counselTitle">
+                                </li>
+                                <li>
+                                    <strong>총 금액</strong>
+                                    <input type="TEXT" placeholder="총 금액을 입력해주세요. 예_345,950" name="counselTitle" id="counselTitle">
+                                </li>
+                                <li>
+                                    <strong>첨부파일</strong>
+                                    <div class="file">
+                                        <span>파일첨부</span>
+                                        <p class="change_txt1">선택된 파일이 없습니다.</p>
+                                         <input type="file" id="counselFile" name="counselFile" onchange="$('.change_txt1').html(this.value.replace(/c:\\fakepath\\/i,''));">
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="btn_area">
+                                <div class="right">
+                                    <div class="more_b">
+                                      <a id="btnSave" href="index2.html">
+                                        Send <span class="dots"><i></i><i></i><i></i></span>
+                                      </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+			$(".sub_visual").addClass('on');
+            $(window).scroll(function(){
+              var top = $(window).scrollTop();
+              var wid = $(window).width();
+
+				var sub_con=$('.sub_con').offset();
+				if (top>sub_con.top-0) {
+					$('.now_pro').addClass("on");
+				}else{
+					$('.now_pro').removeClass("on");
+				}
+				
+
+            });
+        });
+    </script>
+    
+      
+    </div>
+</div>
+</div>
+    <script type="text/javascript">
+    </script>
+  
+</body>
+
+</html>

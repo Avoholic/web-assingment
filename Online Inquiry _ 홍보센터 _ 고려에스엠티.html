@@ -1,0 +1,494 @@
+
+<!-- saved from url=(0048)http://koryosmt.uldesign17.co.kr/sub/inquiry.php -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="./Online Inquiry _ 홍보센터 _ 고려에스엠티_files/jquery-1.11.3.min.js.다운로드"></script>
+    <script type="text/javascript" src="./Online Inquiry _ 홍보센터 _ 고려에스엠티_files/swiper.min.js.다운로드"></script>
+    <link rel="stylesheet" href="./Online Inquiry _ 홍보센터 _ 고려에스엠티_files/commonB.css">
+    <link rel="stylesheet" href="./Online Inquiry _ 홍보센터 _ 고려에스엠티_files/swiper.min.css">
+    <link rel="stylesheet" href="./Online Inquiry _ 홍보센터 _ 고려에스엠티_files/mainB.css">
+    <link rel="stylesheet" href="./Online Inquiry _ 홍보센터 _ 고려에스엠티_files/sub.css">
+   <script type="text/javascript" src="./Online Inquiry _ 홍보센터 _ 고려에스엠티_files/jquery.form.min.js.다운로드"></script>
+   <script type="text/javascript">
+$(document).ready(function(){
+	$("#btnSave").click(function(){
+		goSave();
+	});
+    $("#sub.inquiry .c_chk a").click(function(){
+        $('#p_pop1').fadeIn(300)
+		return false;
+	});
+    $(".close").click(function(){
+        $('#p_pop1').fadeOut(300)
+		return false;
+	});
+    
+});
+function goSave(){
+//    if("" == $("#counselCompany").val().split(" ").join("")){
+//        alert("문의유형을 선택해주세요.");
+//        return false;
+//    }
+
+     if("" == $("#counselName").val().split(" ").join("")){
+		alert("이름을 입력해주세요.");
+		$("#counselCompany2").focus();
+		return false;
+	}
+
+	if("" == $("#counselPhone").val().split(" ").join("")){
+		alert("연락처를 입력해주세요.");
+		$("#counselPhone").focus();
+		return false;
+	}
+    if("" == $("#counselMail").val().split(" ").join("")){
+		alert("이메일을 입력해주세요.");
+		$("#counselBranch").focus();
+		return false;
+	}
+	
+	if("" == $("#counselTitle").val().split(" ").join("")){
+		alert("제목을 입력해주세요.");
+		$("#counselTitle").focus();
+		return false;
+	}
+	if("" == $("#counselContent").val().split(" ").join("")){
+		alert("내용을 입력해주세요.");
+		$("#counselContent").focus();
+		return false;
+	}
+	if(!($('#personal').is(":checked"))){
+		alert("개인정보수집 및 활용에 동의를 하셔야합니다.");
+		$("#personal").focus();
+		return;
+	}
+
+	var params = jQuery("#frm").serialize();
+	$('#frm').ajaxForm({
+		url: 'proc.php',
+		enctype: "multipart/form-data",
+		success: function (p_data) {
+			if(p_data == "Y"){
+				alert("문의가 등록 되었습니다.\n감사합니다.");
+				//location.reload();
+				location.href='inquiry.php';
+			}else{
+				alert(p_data);
+				//$("#BUTTON_GROUP_AFTER").hide();
+				//$("#BUTTON_GROUP_BEFORE").show();
+			}
+		}
+	});
+	$("#frm").submit();
+}
+</script>
+    <title>Online Inquiry | 홍보센터 | 고려에스엠티</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+  		$(document).ready(function(){
+  		   $("#header").load("/html/headerB.html");
+  		   $(".loc01").load("/html/loc01.html");
+  		   $(".loc02").load("/html/loc02_04.html", function(){
+               $(".loc02 li:nth-child(3)").addClass('on');
+           });
+  		});
+    </script>
+    <div id="header" class="sub"><div class="hd_in clear">
+    <div class="wrap">
+      <h1 id="logo">
+        <a href="http://koryosmt.uldesign17.co.kr/B/main.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="165.048" height="41.333" viewBox="0 0 165.048 41.333">
+            <g id="LOGO" transform="translate(-79.691 -464.028)">
+              <path id="패스_115" data-name="패스 115" d="M220.79,563.3c-1.224,0-1.646-.691-1.3-1.606l.058-.152h.619l-.06.158c-.232.612.074,1.059.888,1.059a1.756,1.756,0,0,0,1.683-1.059c.2-.526.013-.908-.664-1.059l-.67-.151c-.811-.18-1.146-.663-.829-1.5a2.488,2.488,0,0,1,2.38-1.526c1.174,0,1.538.691,1.222,1.526l-.041.108h-.626l.041-.108c.222-.583-.046-.979-.8-.979a1.584,1.584,0,0,0-1.552.979c-.2.533.017.828.606.966l.67.151c.907.209,1.212.734.89,1.585a2.614,2.614,0,0,1-2.511,1.606" transform="translate(-89.276 -59.722)" fill="#1a1818"></path>
+              <path id="패스_116" data-name="패스 116" d="M235.246,564.88a2.368,2.368,0,0,1-2.121,1.282c-1.188,0-1.458-.771-.95-2.11a2.76,2.76,0,0,1,2.537-2.11c1.174,0,1.441.778.935,2.11l-.065.173H232.7c-.326.914-.179,1.441.613,1.441a1.525,1.525,0,0,0,1.321-.785Zm-.1-1.109c.274-.835.124-1.332-.625-1.332a1.828,1.828,0,0,0-1.644,1.332Z" transform="translate(-97.302 -62.58)" fill="#1a1818"></path>
+              <path id="패스_117" data-name="패스 117" d="M244.011,566.161c-.958,0-1.375-.476-1.07-1.282a2.08,2.08,0,0,1,2.043-1.282c.626,0,.987.188,1.035.519l.259-.684c.23-.605.031-.994-.646-.994a1.34,1.34,0,0,0-1.284.764h-.612a2.183,2.183,0,0,1,2.084-1.26c1.073,0,1.392.583,1.045,1.5l-.787,2.075a1.862,1.862,0,0,0-.117.554h-.6a1.054,1.054,0,0,1,.082-.425,1.848,1.848,0,0,1-1.429.519m.921-2.067a1.355,1.355,0,0,0-1.392.785c-.186.49.069.785.8.785a1.349,1.349,0,0,0,1.393-.785c.183-.482-.07-.785-.8-.785" transform="translate(-104.276 -62.579)" fill="#1a1818"></path>
+              <path id="패스_118" data-name="패스 118" d="M253.906,563.376l2.142-5.647h.6l-2.142,5.647Z" transform="translate(-111.347 -59.888)" fill="#1a1818"></path>
+              <path id="패스_119" data-name="패스 119" d="M258.418,563.375l1.53-4.033h.6l-1.53,4.033Zm1.844-4.862.3-.785h.6l-.3.785Z" transform="translate(-114.231 -59.887)" fill="#1a1818"></path>
+              <path id="패스_120" data-name="패스 120" d="M266.123,566.067h-.591l.9-2.363c.341-.9.149-1.268-.484-1.268a2.1,2.1,0,0,0-1.75,1.556l-.787,2.074h-.6l1.53-4.033h.6l-.27.713a1.994,1.994,0,0,1,1.609-.807c.915,0,1.185.6.8,1.621Z" transform="translate(-117.038 -62.579)" fill="#1a1818"></path>
+              <path id="패스_121" data-name="패스 121" d="M277.161,565.44a1.872,1.872,0,0,1-1.5.72c-1.059,0-1.381-.706-.849-2.11s1.391-2.111,2.45-2.111c.634,0,.943.288.949.728l.24-.634h.6l-1.6,4.228a2.409,2.409,0,0,1-2.286,1.678c-.936,0-1.332-.476-1.147-1.21h.605c-.1.446.169.713.731.713a1.57,1.57,0,0,0,1.483-1.138Zm0-3c-.835,0-1.377.612-1.757,1.614s-.3,1.613.533,1.613,1.367-.6,1.75-1.613.3-1.614-.526-1.614" transform="translate(-124.17 -62.579)" fill="#1a1818"></path>
+              <path id="패스_122" data-name="패스 122" d="M294.905,563.376l-.161-4.321-1.639,4.321h-.627l2.142-5.647h.7l.185,4.941,3.941-4.941h.7L298,563.376h-.626l1.639-4.321-3.44,4.321Z" transform="translate(-136 -59.888)" fill="#1a1818"></path>
+              <path id="패스_123" data-name="패스 123" d="M315,564.88a2.368,2.368,0,0,1-2.121,1.282c-1.188,0-1.458-.771-.95-2.11a2.76,2.76,0,0,1,2.537-2.11c1.174,0,1.441.778.935,2.11l-.065.173h-2.881c-.326.914-.179,1.441.613,1.441a1.524,1.524,0,0,0,1.321-.785Zm-.1-1.109c.274-.835.124-1.332-.625-1.332a1.828,1.828,0,0,0-1.644,1.332Z" transform="translate(-148.278 -62.58)" fill="#1a1818"></path>
+              <path id="패스_124" data-name="패스 124" d="M325.931,561.94c.979,0,1.379.5,1.151,1.39h-.6c.138-.555-.1-.893-.734-.893-.836,0-1.371.612-1.751,1.614s-.309,1.613.526,1.613a1.541,1.541,0,0,0,1.412-.893h.6a2.383,2.383,0,0,1-2.206,1.39c-1.174,0-1.441-.778-.935-2.11a2.76,2.76,0,0,1,2.537-2.111" transform="translate(-155.604 -62.579)" fill="#1a1818"></path>
+              <path id="패스_125" data-name="패스 125" d="M336.659,563.376h-.591l.9-2.363c.341-.9.149-1.268-.484-1.268a2.1,2.1,0,0,0-1.75,1.556l-.787,2.074h-.6l2.142-5.647h.6l-.882,2.327a1.994,1.994,0,0,1,1.609-.807c.915,0,1.185.6.8,1.621Z" transform="translate(-162.12 -59.888)" fill="#1a1818"></path>
+              <path id="패스_126" data-name="패스 126" d="M346.79,566.161c-.958,0-1.375-.476-1.07-1.282a2.08,2.08,0,0,1,2.042-1.282c.626,0,.987.188,1.035.519l.259-.684c.23-.605.031-.994-.646-.994a1.34,1.34,0,0,0-1.284.764h-.612a2.183,2.183,0,0,1,2.084-1.26c1.073,0,1.392.583,1.045,1.5l-.787,2.075a1.861,1.861,0,0,0-.117.554h-.6a1.055,1.055,0,0,1,.082-.425,1.848,1.848,0,0,1-1.429.519m.921-2.067a1.355,1.355,0,0,0-1.392.785c-.186.49.069.785.8.785a1.349,1.349,0,0,0,1.393-.785c.183-.482-.07-.785-.8-.785" transform="translate(-169.965 -62.579)" fill="#1a1818"></path>
+              <path id="패스_127" data-name="패스 127" d="M359.879,566.067h-.591l.9-2.363c.341-.9.149-1.268-.484-1.268a2.1,2.1,0,0,0-1.75,1.556l-.787,2.074h-.6l1.53-4.033h.6l-.27.713a1.994,1.994,0,0,1,1.609-.807c.915,0,1.185.6.8,1.621Z" transform="translate(-176.96 -62.579)" fill="#1a1818"></path>
+              <path id="패스_128" data-name="패스 128" d="M368.465,563.375l1.53-4.033h.6l-1.53,4.033Zm1.844-4.862.3-.785h.6l-.3.785Z" transform="translate(-184.565 -59.887)" fill="#1a1818"></path>
+              <path id="패스_129" data-name="패스 129" d="M377.137,563.085l-.038.1h-.6l.041-.108c.136-.36-.064-.648-.626-.648a1.144,1.144,0,0,0-1.107.641c-.128.338.029.511.547.627l.451.1c.777.173,1.022.5.762,1.181a2.085,2.085,0,0,1-2,1.181c-.929,0-1.365-.482-1.1-1.181l.052-.137h.6l-.052.137c-.161.425.126.691.688.691a1.267,1.267,0,0,0,1.218-.684c.145-.381-.007-.569-.5-.677l-.459-.1c-.8-.172-1.037-.511-.805-1.124a1.947,1.947,0,0,1,1.9-1.145c.93,0,1.286.482,1.035,1.145" transform="translate(-187.713 -62.579)" fill="#1a1818"></path>
+              <path id="패스_130" data-name="패스 130" d="M386.332,566.067h-.591l1-2.636c.252-.663.06-.994-.5-.994-.605,0-1.268.533-1.654,1.549l-.789,2.081h-.6l1.53-4.033h.6l-.265.7a1.84,1.84,0,0,1,1.5-.792c.605,0,.947.3.907.857a2.026,2.026,0,0,1,1.636-.857c.864,0,1.135.541.769,1.505l-.995,2.622h-.6l1-2.636c.252-.663.068-.994-.494-.994-.6,0-1.278.54-1.663,1.556Z" transform="translate(-193.982 -62.579)" fill="#1a1818"></path>
+              <path id="패스_131" data-name="패스 131" d="M411.422,557.729h3.925l-.208.548h-1.649l-1.934,5.1h-.626l1.934-5.1h-1.65Z" transform="translate(-211.706 -59.887)" fill="#1a1818"></path>
+              <path id="패스_132" data-name="패스 132" d="M421.5,564.88a2.368,2.368,0,0,1-2.121,1.282c-1.188,0-1.458-.771-.95-2.11a2.76,2.76,0,0,1,2.537-2.11c1.174,0,1.441.778.935,2.11l-.065.173h-2.881c-.326.914-.179,1.441.613,1.441a1.524,1.524,0,0,0,1.321-.785Zm-.1-1.109c.274-.835.124-1.332-.625-1.332a1.828,1.828,0,0,0-1.644,1.332Z" transform="translate(-216.342 -62.58)" fill="#1a1818"></path>
+              <path id="패스_133" data-name="패스 133" d="M432.425,561.94c.979,0,1.379.5,1.15,1.39h-.6c.138-.555-.1-.893-.734-.893-.836,0-1.371.612-1.751,1.614s-.309,1.613.526,1.613a1.541,1.541,0,0,0,1.412-.893h.6a2.383,2.383,0,0,1-2.205,1.39c-1.174,0-1.441-.778-.935-2.11a2.76,2.76,0,0,1,2.536-2.111" transform="translate(-223.668 -62.579)" fill="#1a1818"></path>
+              <path id="패스_134" data-name="패스 134" d="M443.153,563.376h-.591l.9-2.363c.342-.9.149-1.268-.484-1.268a2.1,2.1,0,0,0-1.75,1.556l-.787,2.074h-.6l2.142-5.647h.6l-.882,2.327a2,2,0,0,1,1.61-.807c.915,0,1.185.6.8,1.621Z" transform="translate(-230.184 -59.888)" fill="#1a1818"></path>
+              <path id="패스_135" data-name="패스 135" d="M454.932,566.067h-.591l.9-2.363c.341-.9.149-1.268-.484-1.268a2.1,2.1,0,0,0-1.75,1.556l-.787,2.074h-.6l1.53-4.033h.6l-.27.713a1.994,1.994,0,0,1,1.609-.807c.915,0,1.185.6.8,1.621Z" transform="translate(-237.712 -62.579)" fill="#1a1818"></path>
+              <path id="패스_136" data-name="패스 136" d="M465.623,566.161c-1.174,0-1.441-.778-.935-2.11a2.76,2.76,0,0,1,2.536-2.111c1.174,0,1.448.778.942,2.111a2.767,2.767,0,0,1-2.543,2.11m1.412-3.724c-.835,0-1.371.612-1.75,1.614s-.309,1.613.526,1.613,1.375-.6,1.757-1.613.3-1.614-.533-1.614" transform="translate(-245.909 -62.579)" fill="#1a1818"></path>
+              <path id="패스_137" data-name="패스 137" d="M474.979,563.376l2.142-5.647h.6l-2.142,5.647Z" transform="translate(-252.642 -59.888)" fill="#1a1818"></path>
+              <path id="패스_138" data-name="패스 138" d="M481.595,566.161c-1.174,0-1.441-.778-.935-2.11a2.76,2.76,0,0,1,2.536-2.111c1.174,0,1.448.778.942,2.111a2.767,2.767,0,0,1-2.543,2.11m1.412-3.724c-.835,0-1.371.612-1.75,1.614s-.309,1.613.526,1.613,1.375-.6,1.757-1.613.3-1.614-.533-1.614" transform="translate(-256.117 -62.579)" fill="#1a1818"></path>
+              <path id="패스_139" data-name="패스 139" d="M493.4,565.44a1.872,1.872,0,0,1-1.5.72c-1.059,0-1.381-.706-.849-2.11s1.391-2.111,2.45-2.111c.634,0,.943.288.949.728l.24-.634h.6l-1.6,4.228a2.409,2.409,0,0,1-2.286,1.678c-.936,0-1.332-.476-1.147-1.21h.605c-.1.446.169.713.731.713a1.57,1.57,0,0,0,1.483-1.138Zm0-3c-.835,0-1.377.612-1.757,1.614s-.3,1.613.533,1.613,1.367-.6,1.75-1.613.3-1.614-.526-1.614" transform="translate(-262.377 -62.579)" fill="#1a1818"></path>
+              <path id="패스_140" data-name="패스 140" d="M502.809,563.375l1.53-4.033h.6l-1.53,4.033Zm1.844-4.862.3-.785h.6l-.3.785Z" transform="translate(-270.429 -59.887)" fill="#1a1818"></path>
+              <path id="패스_141" data-name="패스 141" d="M511.56,564.88a2.368,2.368,0,0,1-2.121,1.282c-1.188,0-1.458-.771-.95-2.11a2.76,2.76,0,0,1,2.537-2.11c1.174,0,1.441.778.935,2.11l-.065.173h-2.881c-.326.914-.179,1.441.613,1.441a1.524,1.524,0,0,0,1.321-.785Zm-.1-1.109c.274-.835.124-1.332-.625-1.332a1.828,1.828,0,0,0-1.644,1.332Z" transform="translate(-273.903 -62.58)" fill="#1a1818"></path>
+              <path id="패스_142" data-name="패스 142" d="M522.942,563.085l-.038.1h-.6l.041-.108c.136-.36-.064-.648-.626-.648a1.144,1.144,0,0,0-1.107.641c-.128.338.029.511.547.627l.451.1c.777.173,1.022.5.762,1.181a2.084,2.084,0,0,1-2,1.181c-.929,0-1.366-.482-1.1-1.181l.052-.137h.6l-.052.137c-.161.425.127.691.688.691a1.267,1.267,0,0,0,1.218-.684c.145-.381-.007-.569-.5-.677l-.459-.1c-.8-.172-1.037-.511-.805-1.124a1.947,1.947,0,0,1,1.9-1.145c.93,0,1.287.482,1.035,1.145" transform="translate(-280.901 -62.579)" fill="#1a1818"></path>
+              <path id="패스_143" data-name="패스 143" d="M397.323,468.8h-3.749l-4.687,15.438L384.2,468.8H373.89v26.245h6.561V478.065l5.155,16.982h6.561l5.155-16.982v16.982h6.561V468.8h-6.561Z" transform="translate(-188.033 -3.051)" fill="#003774"></path>
+              <path id="패스_144" data-name="패스 144" d="M244.758,468.8H234.448l-7.967,8.112V468.8h-8.436v26.245H219.1l11.308-11.631,6.854,11.631H245.7l-10.018-17Z" transform="translate(-88.427 -3.051)" fill="#003774"></path>
+              <path id="패스_145" data-name="패스 145" d="M313.565,477.286l-3.867-.743c-.071,0-3.972-.544-3.972-2.448,0-1.355,1.682-2.455,3.758-2.455s3.757,1.1,3.757,2.455c0,.25-.165,1.229-.165,1.229h7.659c0-4.015-2.641-8.1-11.787-8.1s-9.788,6.21-9.788,6.21v1.789c0,6.379,9.2,7.729,10.96,8.2a9.527,9.527,0,0,1,1.688.609,2.985,2.985,0,0,1,2.184,2.588c0,1.621-1.851,2.936-4.133,2.936a4.139,4.139,0,0,1-4.382-3.837h-7.467c.534,8.728,9.886,8.55,9.886,8.55h6.086a8.315,8.315,0,0,0,7.6-8.55c0-5.641-6.119-8.062-8.017-8.427" transform="translate(-139.535 -2.042)" fill="#003774"></path>
+              <path id="패스_146" data-name="패스 146" d="M488.387,468.8H463.409v6.561h9.071v19.684h8.436V475.363h.979Z" transform="translate(-245.247 -3.051)" fill="#003774"></path>
+              <path id="패스_147" data-name="패스 147" d="M232.037,529.928h-6.35l6.35-6.55Z" transform="translate(-93.311 -37.933)" fill="#0095d7"></path>
+              <path id="패스_148" data-name="패스 148" d="M525.813,475.367h-6.35l6.35-6.55Z" transform="translate(-281.073 -3.061)" fill="#0095d7"></path>
+              <path id="패스_149" data-name="패스 149" d="M100.013,475.736s-2.21,6.154,11.653,18.115c10.664,9.2,18.414,5.967,18.414,5.967l-4.036,3.959s-8.155,2.265-18.108-6.323S97.19,482.6,96.688,480.308Z" transform="translate(-10.863 -7.483)" fill="#c2c7d2"></path>
+              <path id="패스_150" data-name="패스 150" d="M83.016,495.437s-2.21,6.154,11.653,18.115c10.664,9.2,18.414,5.967,18.414,5.967l-4.036,3.959s-8.155,2.265-18.108-6.323S80.193,502.3,79.691,500.009Z" transform="translate(0 -20.075)" fill="#c2c7d2"></path>
+              <path id="패스_151" data-name="패스 151" d="M118.963,512.038s2.21-6.154-11.653-18.115c-10.664-9.2-18.414-5.967-18.414-5.967L92.932,484s8.155-2.265,18.108,6.323,10.747,14.853,11.248,17.146Z" transform="translate(-5.883 -12.59)" fill="#003774"></path>
+              <path id="패스_152" data-name="패스 152" d="M135.961,492.339s2.21-6.154-11.653-18.115c-10.664-9.2-18.414-5.967-18.414-5.967l4.036-3.959s8.155-2.265,18.108,6.323,10.747,14.853,11.248,17.146Z" transform="translate(-16.747)" fill="#0095d7"></path>
+            </g>
+          </svg>
+        </a>
+      </h1>
+      <div id="gnb">
+          <ul>
+              <li>
+                  <a href="http://koryosmt.uldesign17.co.kr/sub/ceo.php">회사소개</a>
+                  <div class="dep2">
+                    <div class="inner">
+                      <div class="txt">
+                        <strong>회사소개</strong>
+                        <p>KSMT Infomation</p>
+                      </div>
+                      <ul>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/ceo.php">CEO 인사말</a></li>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/ideo.php">경영이념</a></li>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/history.php">연혁</a></li>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/area01.php">사업망</a></li>
+                      </ul>
+                    </div>
+                  </div>
+              </li>
+              <li>
+                  <a href="http://koryosmt.uldesign17.co.kr/sub/business.php">산업군</a>
+                  <div class="dep2">
+                    <div class="inner">
+                      <div class="txt">
+                        <strong>산업군</strong>
+                        <p>KSMT Business</p>
+                      </div>
+                      <ul>
+                        <li><a href="http://koryosmt.uldesign17.co.kr/sub/business01.php">Industrial Tier Supplies</a></li>
+                        <li><a href="http://koryosmt.uldesign17.co.kr/sub/business02.php">Mobile Machinery</a></li>
+                        <li><a href="http://koryosmt.uldesign17.co.kr/sub/business03.php">Manufacturing</a></li>
+                        <li><a href="http://koryosmt.uldesign17.co.kr/sub/business04.php">Energy</a></li>
+                        <li><a href="http://koryosmt.uldesign17.co.kr/sub/business05.php">Transportation</a></li>
+                      </ul>
+                    </div>
+                  </div>
+              </li>
+              <li>
+                  <a href="http://koryosmt.uldesign17.co.kr/sub/product01.php">제품 및 기술</a>
+                  <div class="dep2">
+                    <div class="inner">
+                      <div class="txt">
+                        <strong>제품 및 기술</strong>
+                        <p>KSMT Product &amp; Technology</p>
+                      </div>
+                      <ul>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/product01.php">Freudenberg Sealing Technologies</a></li>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/product02.php">Freudenberg X-Press® Production Site</a></li>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/product03.php">Dichtomatik</a></li>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/product04.php">KYOWA</a></li>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/product05.php">MARTIN</a></li>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/product06.php">HERCULES</a></li>
+                      </ul>
+                    </div>
+                  </div>
+              </li>
+              <li>
+                  <a href="http://koryosmt.uldesign17.co.kr/sub/rnd.php">연구개발</a>
+                  <div class="dep2">
+                    <div class="inner">
+                      <div class="txt">
+                        <strong>연구개발</strong>
+                        <p>KSMT R&amp;D</p>
+                      </div>
+                      <ul>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/rnd.php">소개</a></li>
+                      </ul>
+                    </div>
+                  </div>
+              </li>
+              <li>
+                  <a href="http://koryosmt.uldesign17.co.kr/sub/pr/list.php">홍보센터</a>
+                  <div class="dep2">
+                    <div class="inner">
+                      <div class="txt">
+                        <strong>홍보센터</strong>
+                        <p>KSMT Business</p>
+                      </div>
+                      <ul>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/pr/list.php">PR</a></li>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/notice/list.php">회사소식</a></li>
+                          <li><a href="http://koryosmt.uldesign17.co.kr/sub/recruit.php">상시채용</a></li>
+                      </ul>
+                    </div>
+                  </div>
+              </li>
+              <li>
+                  <a href="http://koryosmt.uldesign17.co.kr/sub/inquiry.php">온라인 문의</a>
+              </li>
+          </ul>
+      </div>
+      <div class="mo_btn">
+          <button>
+              <i></i>
+              <i></i>
+          </button>
+      </div>
+    </div>
+</div>
+<div class="mo_menu">
+<button class="close_b">
+  <span></span>
+  <span></span>
+</button>
+<div class="gnb1">
+  <ul>
+    <li>
+          <a href="http://koryosmt.uldesign17.co.kr/sub/inquiry.php#">회사소개</a>
+          <ul>
+            <li><a href="http://koryosmt.uldesign17.co.kr/sub/ceo.php">CEO 인사말</a></li>
+		    <li><a href="http://koryosmt.uldesign17.co.kr/sub/ideo.php">경영이념</a></li>
+		    <li><a href="http://koryosmt.uldesign17.co.kr/sub/history.php">연혁</a></li>
+		    <li><a href="http://koryosmt.uldesign17.co.kr/sub/area01.php">사업망</a></li>
+          </ul>
+      </li>
+      <li>
+          <a href="http://koryosmt.uldesign17.co.kr/sub/inquiry.php#">산업군</a>
+          <ul>
+            <li><a href="http://koryosmt.uldesign17.co.kr/sub/business01.php">Industrial Tier Supplies</a></li>
+			<li><a href="http://koryosmt.uldesign17.co.kr/sub/business02.php">Mobile Machinery</a></li>
+			<li><a href="http://koryosmt.uldesign17.co.kr/sub/business03.php">Manufacturing</a></li>
+			<li><a href="http://koryosmt.uldesign17.co.kr/sub/business04.php">Energy</a></li>
+			<li><a href="http://koryosmt.uldesign17.co.kr/sub/business05.php">Transportation</a></li>
+          </ul>
+      </li>
+      <li>
+          <a href="http://koryosmt.uldesign17.co.kr/sub/inquiry.php#">제품 및 기술</a>
+          <ul>
+            <li><a href="http://koryosmt.uldesign17.co.kr/sub/product01.php">Freudenberg Sealing Technologies</a></li>
+		    <li><a href="http://koryosmt.uldesign17.co.kr/sub/product02.php">Freudenberg X-Press® Production Site</a></li>
+		    <li><a href="http://koryosmt.uldesign17.co.kr/sub/product03.php">Dichtomatik</a></li>
+		    <li><a href="http://koryosmt.uldesign17.co.kr/sub/product04.php">KYOWA</a></li>
+		    <li><a href="http://koryosmt.uldesign17.co.kr/sub/product05.php">MARTIN</a></li>
+		    <li><a href="http://koryosmt.uldesign17.co.kr/sub/product06.php">HERCULES</a></li>
+          </ul>
+      </li>
+      <li>
+          <a href="http://koryosmt.uldesign17.co.kr/sub/inquiry.php#">연구개발</a>
+          <ul>
+            <li><a href="http://koryosmt.uldesign17.co.kr/sub/rnd.php">소개</a></li>
+          </ul>
+      </li>
+      <li>
+          <a href="http://koryosmt.uldesign17.co.kr/sub/inquiry.php#">홍보센터</a>
+          <ul>
+            <li><a href="http://koryosmt.uldesign17.co.kr/sub/pr/list.php">PR</a></li>
+		    <li><a href="http://koryosmt.uldesign17.co.kr/sub/notice/list.php">회사소식</a></li>
+		    <li><a href="http://koryosmt.uldesign17.co.kr/sub/recruit.php">상시채용</a></li>
+          </ul>
+      </li>
+  </ul>
+</div>
+</div>
+<script type="text/javascript">
+        $(document).ready(function(){
+			$(".sub_visual").addClass('on');
+            $(window).scroll(function(){
+              var top = $(window).scrollTop();
+              var wid = $(window).width();
+
+				if (top>0) {
+				  $('#header').addClass("on");
+					}
+					else{
+				  $('#header').removeClass("on");
+					}
+            });
+        });
+    </script>
+<script>
+  $(function(){
+      $('#header #gnb').hover(function(){
+          $('#header').addClass('on')
+      }, function(){
+          $('#header').removeClass('on')
+      })
+  })	
+
+
+$(function() {
+
+     $('#header .mo_menu .gnb1 > ul > li > a').click(function(){
+       $(this).siblings('ul').toggleClass('on')
+     });
+     $('#header .mo_btn button').click(function(){
+       $('#header .mo_menu').addClass('on')
+     });
+     $('#header .mo_menu button').click(function(){
+       $('#header .mo_menu').removeClass('on')
+     });
+	
+	$('.loc_list button').click(function(){
+		$(this).next('ul').slideToggle(500)
+	})
+
+  });
+</script>
+</div>
+    <div id="sub" class="inquiry">
+        <div class="sub_visual on">
+            <div class="vis_img">
+                <img src="./Online Inquiry _ 홍보센터 _ 고려에스엠티_files/sub_visual05.jpg" alt="">
+            </div>
+            <div class="vis_txt">
+                <div class="inner2">
+                    <strong>Online Inquiry</strong>
+                    <p>홍보센터</p>
+                </div>
+            </div>
+            <div class="sub_loc">
+                <div class="wrap">
+                    <div class="inner2">
+                        <ul class="loc_list">
+                            <li>
+                                <button>홍보센터</button>
+                                <ul class="loc01"><li><a href="http://koryosmt.uldesign17.co.kr/sub/ceo.php">회사소개</a></li>
+<li><a href="http://koryosmt.uldesign17.co.kr/sub/business.php">산업군</a></li>
+<li><a href="http://koryosmt.uldesign17.co.kr/sub/product01.php">제품 및 기술</a></li>
+<li><a href="http://koryosmt.uldesign17.co.kr/sub/rnd.php">연구개발</a></li>
+<li><a href="http://koryosmt.uldesign17.co.kr/sub/pr/list.php">홍보센터</a></li>
+<li><a href="http://koryosmt.uldesign17.co.kr/sub/inquiry.php">온라인 문의</a></li></ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub_con">
+            <div class="now_pro">
+            	<strong>Online Inquiry</strong>
+            	<div class="progress"></div>
+            </div>
+            <div class="con01">
+                <div class="inner2">
+                    <form name="frm" id="frm" method="POST">
+                        <div class="form_list">
+                            <ul>
+                                <li>
+                                    <strong>이름</strong>
+                                    <input type="text" placeholder="이름을 입력해주세요." name="counselName" id="counselName">
+                                </li>
+                                <li>
+                                    <strong>문의유형</strong>
+                                    <select name="counselCheck" id="counselCheck">
+                                        <option value="">문의유형을 선택해주세요.</option>
+                                        <option value="제품 문의">제품 문의</option>
+                                        <option value="설계 및 가공 문의">설계 및 가공 문의</option>
+                                        <option value="채용 문의">채용 문의</option>
+                                        <option value="기타 문의">기타 문의</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <strong>연락처</strong>
+                                    <input type="text" placeholder="연락처를 입력해주세요." name="counselPhone" id="counselPhone">
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <input type="text" placeholder="이메일을 입력해주세요." name="counselMail" id="counselMail">
+                                </li>
+                                <li>
+                                    <strong>제목</strong>
+                                    <input type="text" placeholder="제목을 입력해주세요." name="counselTitle" id="counselTitle">
+                                </li>
+                                <li>
+                                    <strong>문의내용</strong>
+                                    <textarea name="counselContent" id="counselContent" placeholder="문의내용을 입력해주세요."></textarea>
+                                </li>
+                                <li>
+                                    <strong>첨부파일</strong>
+                                    <div class="file">
+                                        <span>파일첨부</span>
+                                        <p class="change_txt1">선택된 파일이 없습니다.</p>
+                                         <input type="file" id="counselFile" name="counselFile" onchange="$(&#39;.change_txt1&#39;).html(this.value.replace(/c:\\fakepath\\/i,&#39;&#39;));">
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="btn_area">
+                                <div class="left">
+                                    <input type="checkbox" id="personal">
+                                    <p>개인정보취급방침에 동의합니다.</p>
+                                    <a href="http://koryosmt.uldesign17.co.kr/sub/inquiry.php">[내용보기]</a>
+                                </div>
+                                <div class="right">
+                                    <div class="more_b">
+                                      <a id="btnSave" href="http://koryosmt.uldesign17.co.kr/sub/inquiry.php#">
+                                        Send <span class="dots"><i></i><i></i><i></i></span>
+                                      </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+			$(".sub_visual").addClass('on');
+            $(window).scroll(function(){
+              var top = $(window).scrollTop();
+              var wid = $(window).width();
+
+				var sub_con=$('.sub_con').offset();
+				if (top>sub_con.top-0) {
+					$('.now_pro').addClass("on");
+				}else{
+					$('.now_pro').removeClass("on");
+				}
+				
+
+            });
+        });
+    </script>
+    <div id="footer" class="sub"><div class="inner">
+    <div class="ft_in">
+      <div class="left">
+        <div class="ft_logo">
+          <img src="./Online Inquiry _ 홍보센터 _ 고려에스엠티_files/ft_logo.png" alt="">
+        </div>
+        <div class="ft_txt">
+          <p>고려SMT <i></i> 대표자명 : 김병호 <i></i>서울특별시 강서구 마곡중앙8로3길 15 케이알빌딩 <br>
+          Tel : 02-2175-2000 <i></i> Fax : 02-2175-2002 <i></i> E-mail : koryosmt@koryosmt.co.kr</p>
+          <address>
+            Copyright ⓒ 2023 KoryoSMT. All Rights Reserved. Design by ULDesign.
+          </address>
+        </div>
+      </div>
+      <div class="right">
+        <ul>
+          <li><a href="http://koryosmt.uldesign17.co.kr/sub/ceo.php">Company</a></li>
+          <li><a href="http://koryosmt.uldesign17.co.kr/sub/business.php">Business</a></li>
+          <li><a href="http://koryosmt.uldesign17.co.kr/sub/product01.php">Products &amp; Technology</a></li>
+          <li><a href="http://koryosmt.uldesign17.co.kr/sub/rnd.php">R&amp;D</a></li>
+          <li><a href="http://koryosmt.uldesign17.co.kr/sub/pr/list.php">PR Center</a></li>
+          <li><a href="http://koryosmt.uldesign17.co.kr/sub/inquiry.php">Online Inquiry</a></li>
+        </ul>
+      </div>
+    </div>
+</div>
+</div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#footer").load("/html/footer.html");
+        });
+    </script>
+  
+</body></html>
